@@ -1,0 +1,30 @@
+{
+  "name": "cone3d",
+  "version": "1.0.0",
+  "description": "Cone in Three.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend && npm run configure && npm run rebuild",
+    "rebuild": "node-gyp rebuild",
+    "configure": "node-gyp configure"
+  },
+  "keywords": [],
+  "author": "agt-ru",
+  "license": "ISC",
+  "gypfile": true,
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "colors": "^1.4.0",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "node-addon-api": "^3.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.1.0",
+    "nodemon": "^2.0.7"
+  }
+}

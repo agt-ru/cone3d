@@ -1,0 +1,61 @@
+.controls {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 350px;
+  height: 100vh;
+  padding: 50px 15px;
+  z-index: 1;
+  color: white;
+  background-color: rgb(0,140,255);
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.controls form {
+  display: table;
+  margin: 0 auto;
+}
+
+.controls form p {
+  display: table-row;
+}
+
+.controls form label, input {
+  display: table-cell;
+  padding: 25px 15px;
+}
+
+.controls form input {
+  text-align: right;
+}
+
+.controls.hidden {
+  right: -295px;
+}
+
+.controls input {
+  display: inline-block;
+  height: 50px;
+  width: 80px;
+  vertical-align: middle;  
+  padding: 15px;
+  margin-left: 30px;
+  border: 0;
+  font-size: 18px;
+  background-color: white;
+}
+
+.controls input[type="checkbox"] {
+  width: 30px;
+  margin-left: 55px;
+}
+
+.arrow {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  cursor: pointer;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
