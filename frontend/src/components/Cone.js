@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import * as THREE from "three";
 
 function getGeometry(positions, normals, isSmooth) {
@@ -18,6 +18,8 @@ function getGeometry(positions, normals, isSmooth) {
 
 export default function Cone({ position, rotation, positions, normals, isSmooth }) {
   const mesh = useRef();
+  const mat = useMemo(() => new THREE.MeshStandardMaterial({side: THREE.DoubleSide, color: "darkseagreen"}), []);
+  const geo = useMemo(() => getGeometry(positions, normals, isSmooth), [positions, normals, isSmooth]);
 
   return (
     <>
@@ -26,18 +28,9 @@ export default function Cone({ position, rotation, positions, normals, isSmooth 
           ref={mesh}
           rotation={rotation}
           position={position}
-          geometry={getGeometry(
-            positions,
-            normals,
-            isSmooth
-          )}
-        >
-          <meshStandardMaterial
-            attach="material"
-            side={THREE.DoubleSide}
-            color="darkseagreen"
-          />
-        </mesh>
+          material={mat}
+          geometry={geo}
+        />
       ) : (
         ""
       )}

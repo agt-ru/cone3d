@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <div id="canvas-container">
-        <Canvas>
+        <Canvas mode="concurrent">
           <ambientLight intensity={0.5} />
           <spotLight position={[30, 30, 30]} angle={0.15} penumbra={1} />
           <pointLight position={[-30, -30, -30]} />
