@@ -1,4 +1,4 @@
-const addonUtils = require('bindings')('utils');
+const { get_cone_data } = require('./cpp_calc_triangulation/build/Release/addon');
 
 // prettier-ignore
 function calcPiPos(R, N, i) {
@@ -36,19 +36,13 @@ function getConeData(cHeight, cRadius, cNumSegs) {
 }
 
 function getConeDataFromCPP(cHeight, cRadius, cNumSegs) {
-  const coneDataFromCPP = addonUtils.getConeDataStr(cHeight, cRadius, cNumSegs);
-  const floatsArr = coneDataFromCPP.split(" ");
+  const coneData = get_cone_data(cHeight, cRadius, cNumSegs);
   const conePositions = [];
   const coneNormals = [];
-
-  for(let i = 0; i < floatsArr.length / 2; i++) {
-    conePositions.push(parseFloat(floatsArr[i]));
+  for(let i = 0; i < coneData.length; i++) {
+    conePositions.push(coneData.positions[i]);
+    coneNormals.push(coneData.normals[i]);
   }
-
-  for(let i = floatsArr.length / 2; i < floatsArr.length; i++) {
-    coneNormals.push(parseFloat(floatsArr[i]));
-  }
-
   return {conePositions, coneNormals};
 }
 

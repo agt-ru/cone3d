@@ -16,10 +16,26 @@ function getGeometry(positions, normals, isSmooth) {
   return geometry;
 }
 
-export default function Cone({ position, rotation, positions, normals, isSmooth }) {
+export default function Cone({
+  position,
+  rotation,
+  positions,
+  normals,
+  isSmooth,
+}) {
   const mesh = useRef();
-  const mat = useMemo(() => new THREE.MeshStandardMaterial({side: THREE.DoubleSide, color: "darkseagreen"}), []);
-  const geo = useMemo(() => getGeometry(positions, normals, isSmooth), [positions, normals, isSmooth]);
+  const mat = useMemo(
+    () =>
+      new THREE.MeshStandardMaterial({
+        side: THREE.DoubleSide,
+        color: 0x648364,
+      }),
+    []
+  );
+  const geo = useMemo(
+    () => getGeometry(positions, normals, isSmooth),
+    [positions, normals, isSmooth]
+  );
 
   return (
     <>

@@ -17,10 +17,11 @@ cd frontend
 npm install
 ```
 
-## Configure and build C++ module:
+## C++ module: install dependencies and build
 ```
-npm run configure
-npm run rebuild
+cd backend/cpp_calc_triangulation
+npm install
+npm run compile
 ```
 
 ## Run frontend (:3000) & backend (:5000)

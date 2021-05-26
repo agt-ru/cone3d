@@ -1,0 +1,18 @@
+{
+  "name": "cpp_calc_triangulation",
+  "version": "1.0.0",
+  "description": "Calculate triangulation and normals in C++",
+  "main": "index.js",
+  "scripts": {
+    "compile": "node-gyp rebuild",
+    "start": "node index.js"
+  },
+  "gypfile": "true",
+  "keywords": [],
+  "author": "agt-ru",
+  "license": "ISC",
+  "dependencies": {
+    "nan": "^2.14.2",
+    "node-gyp": "^8.0.0"
+  }
+}
