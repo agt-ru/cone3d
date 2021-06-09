@@ -1,5 +1,6 @@
 # Custom cone in Three.js
 ## Live version: http://agt-ru-cone3d.herokuapp.com/
+![screenshot](https://github.com/agt-ru/cone3d/blob/main/cone3d_screenshot.png)
 ## Features:
 - Custom cone geometry written in Three.js with react-three-fiber
 - Frontend on React / backend on Node.js & Express
@@ -31,5 +32,3 @@ npm run compile
 ```
 npm run dev
 ```
-
-![screenshot](https://github.com/agt-ru/cone3d/blob/main/cone3d_screenshot.png)
