@@ -1,10 +1,13 @@
-# cone3d
-Cone in Three.js
-
+# Custom cone in Three.js
 ## Live version: http://agt-ru-cone3d.herokuapp.com/
+## Features:
+- Custom cone geometry written in Three.js with react-three-fiber
+- Frontend on React / backend on Node.js & Express
+- Custom node module written in C++, which calculates cone triangulation and normals
+- Cone coordinates and normals based on params set by the user are calculated on the backend and then sent back to the client
 
 ## Env Variables
-Create a .env file in then root and add the following
+Create a .env file in the root and add the following
 ```
 NODE_ENV = development
 PORT = 5000
